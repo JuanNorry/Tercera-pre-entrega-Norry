@@ -15,7 +15,16 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from AppCoder.views import index, curso, estudiante, profesor, agregar_post_curso, agregar_post_estudiante, agregar_post_profesor,buscar_post
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', index, name="index"),
+    path('template-curso', curso, name="template-curso"),
+    path('template-estudiante', estudiante, name="template-estudiante"),
+    path('template-profesor', profesor, name="template-profesor"),
+    path('agregar_post/curso', agregar_post_curso, name="agregar-post-curso"),
+    path('agregar_post/estudiante', agregar_post_estudiante, name="agregar-post-estudiante"),
+    path('agregar_post/profesor', agregar_post_profesor, name="agregar-post-profesor"),
+    path('buscar_post', buscar_post, name="buscar-post")
 ]

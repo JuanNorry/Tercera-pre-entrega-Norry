@@ -1,0 +1,20 @@
+{% extends "AppCoder/base.html" %}
+{% load static %}
+
+{% block main %}
+    <h1>Formulario - Agregar Curso</h1>
+
+    <form action="{% url 'agregar-post-curso' %}" method="post">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" value="Agregar">
+    </form>
+    
+    <ul>
+        {% for post in posts %}
+        <li> {{post.id}} - {{post.curso}} - {{post.camada}} </li>
+        {% endfor %}
+    </ul>
+
+
+{% endblock %}
